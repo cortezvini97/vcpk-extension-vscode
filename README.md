@@ -16,7 +16,6 @@ Você pode instalar a extensão diretamente do Visual Studio Code Marketplace.
 Após a instalação, a extensão reconhecerá arquivos com a extensão `.vcpk` e aplicará a formatação e a sintaxe apropriadas.
 
 
-
 ## Licença
 
 Este projeto é licenciado sob a MIT.
