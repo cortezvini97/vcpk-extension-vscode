@@ -1,0 +1,35 @@
+{
+  "name": "vcpk",
+  "displayName": "vcpk",
+  "description": "",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.92.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "main": "./out/extension.js",
+  "scripts": {
+    "vscode:prepublish": "tsc -p ./",
+    "compile": "powershell.exe -ExecutionPolicy Bypass -File ./run.ps1"
+  },
+  "contributes": {
+    "languages": [{
+      "id": "vcpk",
+      "aliases": ["vcpk", "vcpk"],
+      "extensions": [".vcpk"],
+      "configuration": "./language-configuration.json"
+    }],
+    "grammars": [{
+      "language": "vcpk",
+      "scopeName": "source.vcpk",
+      "path": "./syntaxes/vcpk.tmLanguage.json"
+    }]
+  },
+  "devDependencies": {
+    "typescript": "^4.x.x",
+    "@types/vscode": "^1.x.x",
+    "vscode-test": "^1.x.x"
+  }
+}

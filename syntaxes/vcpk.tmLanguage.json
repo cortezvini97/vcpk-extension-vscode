@@ -1,0 +1,117 @@
+{
+    "name": "vcpk",
+    "patterns": [
+        {
+            "include": "#comments"
+        },
+        {
+            "include": "#commands"
+        },
+        {
+            "include": "#devcommands"
+        },
+        {
+            "include": "#variables"
+        },
+        {
+            "include": "#keywords"
+        },
+        {
+            "include": "#directives"
+        },
+        {
+            "include": "#strings"
+        }
+    ],
+    "repository": {
+        "comments": {
+            "patterns": [
+                {
+                    "begin": "#",
+                    "beginCaptures": {
+                        "0": {
+                            "name": "comment.line.number-sign.vcpk"
+                        }
+                    },
+                    "end": "$",
+                    "name": "comment.line.number-sign.vcpk"
+                }
+            ]
+        },
+        "variables": {
+            "patterns": [
+                {
+                    "match": "\\$[a-zA-Z_][a-zA-Z0-9_]*",
+                    "name": "variable.other.vcpk"
+                }
+            ]
+        },
+        "keywords": {
+            "patterns": [
+                {
+                    "name": "keyword.control.vcpk",
+                    "match": "\\b(Name|Version|Author|Description|Architecture|Licence|SourceType|installDir|installDebugDir|Require)\\b"
+                }
+            ]
+        },
+        "devcommands": {
+            "patterns": [
+                {
+                    "name": "support.function.vcpk",
+                     "match": "\\b(make|gcc|g++|automake|autoconf|libtool|binutils|debugger|rpm-build|cmake|flex|bison|gdb|pkg-config|strace|valgrind|elfutils|patch|rpmdevtools|git|subversion|cvs|gettext|nasm|as|ld|ar|strip|objdump|objcopy)\\b"
+                }
+            ]
+        },
+        "commands": {
+            "patterns": [
+                {
+                    "name": "support.function.vcpk",
+                    "match": "\\b(mkdir|ls|pwd|rmdir|rm|cp|mv|touch|find|locate|cat|more|less|head|tail|nano|vi|vim|grep|chmod|chown|chgrp|umask|ps|top|kill|pkill|jobs|bg|fg|df|du|free|uname|uptime|reboot|shutdown|ping|ifconfig|ip|netstat|ss|wget|curl|history|man|echo|date|tar|gzip|gunzip|zip|unzip|configure|cd)\\b"
+                }
+            ]
+        },
+        "directives": {
+            "patterns": [
+                {
+                    "name": "keyword.directive.vcpk",
+                    "match": "^%\\w+"
+                }
+            ]
+        },
+        "strings": {
+            "patterns": [
+                {
+                    "name": "string.quoted.double.vcpk",
+                    "begin": "\"",
+                    "end": "\"",
+                    "patterns": [
+                        {
+                            "name": "constant.character.escape.vcpk",
+                            "match": "\\\\."
+                        },
+                        {
+                            "match": "\\$[a-zA-Z_][a-zA-Z0-9_]*",
+                            "name": "variable.other.vcpk"
+                        }
+                    ]
+                },
+                {
+                    "name": "string.quoted.single.vcpk",
+                    "begin": "'",
+                    "end": "'",
+                    "patterns": [
+                        {
+                            "name": "constant.character.escape.vcpk",
+                            "match": "\\\\."
+                        },
+                        {
+                            "match": "\\$[a-zA-Z_][a-zA-Z0-9_]*",
+                            "name": "variable.other.vcpk"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "scopeName": "source.vcpk"
+}

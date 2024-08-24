@@ -1,0 +1,8 @@
+.vscode
+teste
+node_modules
+.vscodeignore
+CHANGELOG.md
+out
+package-lock.json
+vsc-extension-quickstart.md
